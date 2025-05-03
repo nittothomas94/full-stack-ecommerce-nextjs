@@ -11,6 +11,7 @@ export default function HomePage() {
   const handleClick = to => {
     router.push(to);
   };
+
   return (
     <main>
       <h1>Welcome to My Store</h1>

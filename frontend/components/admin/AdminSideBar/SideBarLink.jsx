@@ -9,7 +9,7 @@ export default function SidebarLink({ href, icon, label }) {
 
   return (
     <div
-      className={`flex h-10 items-center pl-2 hover:bg-blue-700 ${
+      className={`flex h-10 lg:h-12 items-center pl-2 hover:bg-blue-700 ${
         isActive ? 'bg-blue-700 text-white' : ''
       }`}
     >

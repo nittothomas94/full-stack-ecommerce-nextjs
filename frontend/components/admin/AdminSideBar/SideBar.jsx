@@ -13,8 +13,8 @@ const AdminSideBar = () => {
   };
 
   return (
-    <div className="min-h-screen w-45 relative top-0 left-0 flex flex-col border">
-      <div className="w-full h-32 flex items-center justify-center border">
+    <div className="min-h-screen w-45 lg:w-60 relative top-0 left-0 flex flex-col">
+      <div className="w-full h-30 lg:32 flex items-center justify-center pr-5">
         <img src="/images/common/logo.png" alt="logo" className="md:size-20" />
       </div>
       <div className="min-h-40 flex flex-col gap-1">
@@ -33,7 +33,7 @@ const AdminSideBar = () => {
       </div>
 
       <div
-        className="text-blue-600 flex items-center gap-5 absolute bottom-10 pl-2 hover:bg-gray-200 w-full cursor-pointer h-10"
+        className="text-blue-600 flex items-center gap-5 absolute bottom-[5%] pl-3 hover:bg-gray-200 w-full cursor-pointer h-10"
         onClick={handleLogoutClick}
       >
         <i className="material-icons">logout</i>
