@@ -59,7 +59,7 @@ const UserCard = () => {
   ];
 
   return (
-    <div className="relative bg-gray-200 text-black rounded-t-md p-4 shadow-md w-[88%] h-full ">
+    <div className="relative bg-gray-200 text-black rounded-t-md p-4 shadow-md w-[99%] lg:w-[88%] h-full ">
       {/* Table Header */}
       <div className="w-full grid grid-cols-5 lg:grid-cols-6 font-semibold border-b border-b-gray-400 py-3 px-2 text-left text-gray-600">
         <div>User ID</div>

@@ -50,7 +50,7 @@ const User = () => {
           pageCount={10}
           forcePage={currentpage - 1}
           renderOnZeroPageCount={null}
-          containerClassName="absolute right-5 bottom-0 flex items-center justify-center gap-2 mt-6 bg-gray-200 p-3 rounded-md lg:flex-col"
+          containerClassName="lg:absolute right-5 bottom-0 flex items-center justify-center gap-2 mt-6 bg-gray-200 p-3 rounded-md lg:flex-col"
           pageClassName="w-8 h-8 rounded-full flex items-center justify-center border cursor-pointer"
           activeClassName="bg-blue-900 text-white"
           previousClassName="cursor-pointer"
