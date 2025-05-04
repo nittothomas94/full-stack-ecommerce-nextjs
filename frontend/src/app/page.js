@@ -13,7 +13,7 @@ export default function HomePage() {
   };
 
   return (
-    <main>
+    <main className="font-sans">
       <h1>Welcome to My Store</h1>
       <Button
         text="Go to Admin Login"

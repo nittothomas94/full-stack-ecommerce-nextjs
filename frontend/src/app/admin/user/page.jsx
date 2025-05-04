@@ -5,7 +5,7 @@ import UserCard from '../../../../components/admin/UserCard/UserCard';
 import ReactPaginate from 'react-paginate';
 import axios from '../../../../utils/axios';
 import { useState, useEffect } from 'react';
-const User = () => {
+const AdminUserPage = () => {
   const [currentpage, setCurrentPage] = useState(1);
   const [limit, setLimit] = useState(10);
   const [users, setUsers] = useState();
@@ -38,6 +38,7 @@ const User = () => {
           arrow_downward
         </i>
       </div>
+
       <div className="flex flex-col lg:flex-row w-full h-[80%] gap-5 relative">
         <UserCard />
 
@@ -61,4 +62,4 @@ const User = () => {
   );
 };
 
-export default User;
+export default AdminUserPage;

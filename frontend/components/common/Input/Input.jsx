@@ -1,10 +1,11 @@
-const Input = ({ type = 'text', className, placeholder, onChange }) => {
+const Input = ({ type = 'text', className, placeholder, onChange, value }) => {
   return (
     <input
       type={type}
       className={className}
       placeholder={placeholder}
       onChange={onChange}
+      value={value}
     />
   );
 };

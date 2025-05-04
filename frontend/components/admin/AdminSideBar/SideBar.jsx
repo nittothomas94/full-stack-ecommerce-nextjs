@@ -25,7 +25,7 @@ const AdminSideBar = () => {
         />
         <SidebarLink href="/admin/user" icon="group" label="User" />
         <SidebarLink
-          href="/admin/product"
+          href={'/admin/product' || 'admin/produt/:id'}
           icon="shopping_cart"
           label="Product"
         />
