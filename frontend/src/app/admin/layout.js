@@ -5,12 +5,12 @@ import Header from '../../../components/admin/Header/Header';
 
 export default function AdminLayout({ children }) {
   return (
-    <main className="min-h-screen w-full 2xl:flex 2xl:items-center 2xl:justify-center">
+    <main className="min-h-screen w-full 2xl:flex 2xl:justify-center">
       {/* You can add AdminHeader or Sidebar here */}
 
-      <div className="bg-white text-black flex w-full min-h-screen 2xl:w-[1550px]">
+      <div className="bg-white text-black flex min-h-screen md:w-full 2xl:w-[1700px] border">
         <AdminSideBar />
-        <div className="w-full flex flex-col bg-gray-100">
+        <div className="flex flex-col bg-gray-100 w-full">
           <Header />
           {children}
         </div>
