@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import { useRouter } from 'next/navigation';
 import axios from '../../../../../utils/axios';
-import Button from '../../../../../components/common/Button/Button';
+import Button from '@/app/components/common/Button';
 
 const ProductByID = () => {
   const [product, setProduct] = useState([
@@ -50,12 +50,12 @@ const ProductByID = () => {
     await axios.delete();
   };
   return (
-    <main className=" ">
+    <main className="w-full min-h-screen">
       {product.map(item => {
         console.log(item.images);
         return (
-          <div className="w-full min-h-screen flex flex-col gap-5 ">
-            <div className="w-full flex items-center justify-between lg:pr-3">
+          <div className="w-full min-h-screen flex flex-col gap-5 p-2">
+            <div className="w-full flex items-center justify-between">
               <h1 className="text-[28px] font-Poppins font-bold">
                 Product Details
               </h1>
@@ -82,7 +82,7 @@ const ProductByID = () => {
             {/* product id section */}
 
             <p className="w-full h-12 bg-gray-300 flex items-center font-bold text-[18px] rounded-[5px] pl-2">
-              Product Id
+              Product Id : {id}
             </p>
 
             {/* images */}
@@ -96,7 +96,7 @@ const ProductByID = () => {
                   <div className="px-2 py-3 bg-gray-300 rounded-[5px] hover:shadow-xl/30 hover:scale-105">
                     <div
                       key={index}
-                      className="w-40 h-35 flex items-center justify-center bg-white rounded-[5px]"
+                      className="w-35 h-35 flex items-center justify-center bg-white rounded-[5px]"
                     >
                       <img
                         src={imgUrl}
@@ -110,12 +110,12 @@ const ProductByID = () => {
             </div>
 
             {/* product details */}
-            <div className="w-full lg:w-[80%]  px-1 flex flex-col gap-4 mt-3">
-              <div className="flex items-center justify-between">
+            <div className="w-full min-h-90 xl:min-h-20 lg:w-[80%]  px-1 flex flex-col gap-5 mt-3">
+              <div className="flex items-center justify-between mt-4">
                 <h1 className="w-2/5 font-bold">Product Name</h1>
                 <p className="w-3/5 text-gray-700">{item.name}</p>
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mt-4">
                 <h1 className="w-2/5 font-bold">Price</h1>
                 <p className="w-3/5 text-gray-700">{item.price}</p>
               </div>

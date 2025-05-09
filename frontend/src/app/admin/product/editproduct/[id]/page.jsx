@@ -5,8 +5,10 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { useState, useEffect } from 'react';
 import axios from '../../../../../../utils/axios';
-import Button from '../../../../../../components/common/Button/Button';
-import Input from '../../../../../../components/common/Input/Input';
+import Button from '@/app/components/common/Button';
+import Input from '@/app/components/common/Input';
+import UploadImage from '@/app/components/admin/Uploadimage';
+
 import {
   ToastContainer,
   toast,
@@ -15,7 +17,7 @@ import {
   Flip,
   Bounce,
 } from 'react-toastify';
-import Modal from '../../../../../../components/common/Modal/page';
+import Modal from '../../../../components/common/Modal';
 
 const EditProductpage = () => {
   const idOfProductToUpdate = usePathname();
@@ -78,8 +80,12 @@ const EditProductpage = () => {
     setModal(true);
   };
 
+  const handleAddImage = () => {
+    console.log('add image api here');
+  };
+
   return (
-    <main className="w-full min-h-screen lg:min-h-screen px-1 py-3 lg:p-2 lg:px-3">
+    <main className="w-full min-h-screen px-2 py-3 lg:p-2 lg:px-3">
       {/* {modal ? <Modal /> : ''} */}
       {ProductByID.map(item => {
         return (
@@ -120,18 +126,23 @@ const EditProductpage = () => {
             <div className="w-full min-h-30 flex gap-3 px-2 overflow-auto">
               {ProductByID[0].images.map((imgUrl, index) => (
                 <div
-                  className="px-2 py-3 bg-gray-300 rounded-[5px] hover:shadow-xl/30 hover:scale-105"
+                  className="px-2 py-3 pb-8 bg-gray-300 rounded-[5px] rounded-b-[20px] hover:shadow-xl/30 hover:scale-105 relative"
                   key={`${imgUrl}-${index}`}
                 >
-                  <div className="w-40 h-35 flex items-center justify-center bg-white rounded-[5px]">
+                  <div className="w-43 h-35 flex items-center justify-center bg-white rounded-[5px]">
                     <img
                       src={imgUrl}
                       alt={`Product image ${index + 1}`}
                       className="w-full h-full object-center object-contain"
                     />
                   </div>
+                  <div className="absolute bottom-0 left-0 w-full bg-[#382ee9] text-white h-12 rounded-b-[20px] flex items-center justify-between px-2">
+                    <h1>Replace</h1>
+                    <i className="material-icons">change_circle</i>
+                  </div>
                 </div>
               ))}
+              <UploadImage onClick={handleAddImage} />
             </div>
 
             {/* product details */}

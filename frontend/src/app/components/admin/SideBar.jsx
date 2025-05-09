@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import SidebarLink from './SideBarLink';
-import Button from '../../common/Button/Button';
+import Button from '../common/Button';
 
 const AdminSideBar = () => {
   const pathname = usePathname();
@@ -13,7 +13,7 @@ const AdminSideBar = () => {
   };
 
   return (
-    <div className="min-h-screen w-45 lg:w-60 relative top-0 left-0 flex flex-col">
+    <div className="min-h-screen w-42 lg:w-60 relative top-0 left-0 flex flex-col">
       <div className="w-full h-30 lg:32 flex items-center justify-center pr-5">
         <img src="/images/common/logo.png" alt="logo" className="md:size-20" />
       </div>

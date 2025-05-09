@@ -1,11 +1,11 @@
 // /app/admin/products/page.js
 
 'use client';
-import SearchBar from '../../../../components/common/SearchBar/Searchbar';
+import SearchBar from '@/app/components/common/Searchbar';
 import ReactPaginate from 'react-paginate';
 import axios from '../../../../utils/axios';
 import { useState, useEffect } from 'react';
-import ProductCard from '../../../../components/admin/ProductCard/ProductCard';
+import ProductCard from '@/app/components/admin/ProductCard';
 import { useRouter } from 'next/navigation';
 
 const AdminProductspage = () => {
@@ -132,7 +132,7 @@ const AdminProductspage = () => {
   };
 
   return (
-    <main className="w-full min-h-50 py-3 pb-8 pl-5 flex flex-col gap-5">
+    <main className="w-full min-h-50 py-3 pb-8 px-2 flex flex-col gap-5">
       <h1 className="text-[20px] lg:text-[30px] font-bold">
         Products Management
       </h1>

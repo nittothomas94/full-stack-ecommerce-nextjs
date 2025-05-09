@@ -56,32 +56,50 @@ const UserCard = () => {
       phone: '9456781234',
       address: '33 Capitol Hill, DC',
     },
+    {
+      id: '1009',
+      name: 'Hannah Wells',
+      email: 'hannahw@example.com',
+      phone: '9456781234',
+      address: '33 Capitol Hill, DC',
+    },
+    {
+      id: '1010',
+      name: 'Hannah Wells',
+      email: 'hannahw@example.com',
+      phone: '9456781234',
+      address: '33 Capitol Hill, DC',
+    },
   ];
 
   return (
-    <div className="relative bg-gray-200 text-black rounded-t-md p-4 shadow-md w-[99%] lg:w-[88%] h-full ">
+    <div className="relative bg-gray-200 text-black rounded-t-md p-4 shadow-md w-full lg:w-[88%] h-full">
       {/* Table Header */}
-      <div className="w-full grid grid-cols-5 lg:grid-cols-6 font-semibold border-b border-b-gray-400 py-3 px-2 text-left text-gray-600">
+      <div className="w-full grid md:grid-cols-10 md:gap-5 xl:grid-cols-15 xl:gap-5 border font-semibold border-b border-b-gray-400 py-3 px-2 text-left items-center text-gray-600">
         <div>User ID</div>
-        <div>Full name</div>
-        <div className="md:hidden lg:block">Email</div>
-        <div>Phone number</div>
-        <div>Address</div>
-        <div>Order details</div>
+        <div className=" md:col-span-2 xl:col-span-2">Full name</div>
+        <div className="md:hidden xl:block md:col-span-2 xl:col-span-4">
+          Email
+        </div>
+        <div className="md:col-span-2 xl:col-span-2">Phone number</div>
+        <div className="md:col-span-3 xl:col-span-4">Address</div>
+        <div className="md:col-span-2 xl:col-span-2">Order details</div>
       </div>
 
       {/* Table Rows */}
       {userData.map(user => (
         <div
           key={user.id}
-          className="grid grid-cols-5 lg:grid-cols-6 border-b border-b-gray-300 min-h-14 items-center px-2 text-left text-sm text-gray-800"
+          className="grid grid-cols-10 gap-5 xl:gap-1  xl:grid-cols-15 border-b border-b-gray-300 min-h-14 items-center justify-between px-2 text-left text-sm text-gray-800"
         >
           <div>{user.id}</div>
-          <div>{user.name}</div>
-          <div className="md:hidden lg:block">{user.email}</div>
-          <div>{user.phone}</div>
-          <div>{user.address}</div>
-          <div className="text-blue-600 cursor-pointer hover:underline ml-5">
+          <div className=" col-span-2 xl:col-span-2">{user.name}</div>
+          <div className="md:hidden xl:block col-span-2 xl:col-span-4">
+            {user.email}
+          </div>
+          <div className=" col-span-2 xl:col-span-2">{user.phone}</div>
+          <div className=" col-span-3 xl:col-span-4">{user.address}</div>
+          <div className="text-blue-600 cursor-pointer hover:underline col-span-2 xl:col-span-2">
             View order
           </div>
         </div>

@@ -4,7 +4,7 @@
 
 import { useRouter } from 'next/navigation';
 
-import Button from '../../components/common/Button/Button';
+import Button from './components/common/Button';
 export default function HomePage() {
   const router = useRouter();
 

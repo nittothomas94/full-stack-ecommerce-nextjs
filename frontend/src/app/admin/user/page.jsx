@@ -1,7 +1,6 @@
 'use client';
-
-import SearchBar from '../../../../components/common/SearchBar/Searchbar';
-import UserCard from '../../../../components/admin/UserCard/UserCard';
+import SearchBar from '@/app/components/common/Searchbar';
+import UserCard from '@/app/components/admin/UserCard';
 import ReactPaginate from 'react-paginate';
 import axios from '../../../../utils/axios';
 import { useState, useEffect } from 'react';
@@ -30,18 +29,21 @@ const AdminUserPage = () => {
   };
 
   return (
-    <main className="w-full min-h-50 py-3 pb-8 pl-5 flex flex-col gap-5">
+    <main className="w-full min-h-50 py-3 pb-8 px-3 2xl:px-5 flex flex-col gap-5">
       <h1 className="text-[20px] lg:text-[30px] font-bold">User Management</h1>
-      <div className="flex h-10 items-center gap-3">
-        <SearchBar className="w-60  h-full flex items-center gap-3 border border-gray-400 rounded-[5px] px-4 lg:w-75" />
+      {/* Search By User Id */}
+      <div className="flex h-10 items-center gap-3 w-full">
+        <SearchBar
+          className="w-60  h-full flex items-center gap-3 border border-gray-400 rounded-[5px] px-4 lg:w-75"
+          placeholder="Search By User Id"
+        />
         <i className="material-icons size-8 bg-blue-700 text-white p-[4px] rounded-[5px]">
           arrow_downward
         </i>
       </div>
 
-      <div className="flex flex-col lg:flex-row w-full h-[80%] gap-5 relative">
+      <div className="flex flex-col xl:flex-row w-full xl:items-center min-h-[70%] h-fit gap-5 relative">
         <UserCard />
-
         <ReactPaginate
           breakLabel="..."
           nextLabel={<i className="fa-solid fa-arrow-down"></i>}

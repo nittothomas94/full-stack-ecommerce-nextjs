@@ -1,7 +1,6 @@
 'use client';
-
-import Input from '../../common/Input/Input';
-import Button from '../../common/Button/Button';
+import Input from '../common/Input';
+import Button from '../common/Button';
 import { useState } from 'react';
 import {
   ToastContainer,
@@ -39,7 +38,7 @@ const AdminLoginForm = () => {
 
   return (
     <>
-      <div className="w-full h-95 flex flex-col gap-5 items-center justify-center shadow-md p-2 bg-white rounded-[6px] md:w-[600px] md:h-[480px] md:p-[40px] md:mt-22">
+      <div className="w-full h-95 flex flex-col gap-5 items-center justify-center shadow-md p-2 bg-white rounded-[25px] md:w-[600px] md:h-[400px] md:p-[40px] md:mt-22">
         <h1 className="text-4xl font-bold md:text-[45px]">Welcome</h1>
         <p className="text-gray-400 md:text-[22px]">
           Please log in to continue
@@ -55,7 +54,7 @@ const AdminLoginForm = () => {
           onChange={e => handleChange(e, 'password')}
         />
         <Button
-          className="w-full bg-blue-600 text-white h-10 rounded-[5px] cursor-pointer hover:bg-blue-900 active:scale-95 md:h-13"
+          className="w-full bg-amber-300 text-white h-10 rounded-[10px] cursor-pointer hover:bg-amber-400 active:scale-95 md:h-13"
           text="Login"
           onClick={() => handleClick()}
         />
