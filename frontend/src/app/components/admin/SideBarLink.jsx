@@ -13,13 +13,13 @@ export default function SidebarLink({ href, icon, label }) {
   return (
     <Link
       href={href}
-      className={`flex h-10 lg:h-12 pl-3 hover:bg-blue-700 text-[18px] text-gray-700 transition-all duration-50 items-center gap-1 ${
-        isActive ? 'bg-blue-700 text-white' : ''
+      className={`flex h-12 lg:h-13 pl-3 hover:bg-blue-700 text-[18px] text-gray-500 transition-all duration-50 items-center gap-1 ${
+        isActive ? 'bg-[#f8e298]' : ''
       }`}
     >
       <i
         className={`material-icons text-gray-700 ${
-          isActive ? 'text-white' : ''
+          isActive ? 'text-black' : ''
         }`}
       >
         {icon}

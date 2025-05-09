@@ -7,6 +7,8 @@ import axios from '../../../../utils/axios';
 import { useState, useEffect } from 'react';
 import ProductCard from '@/app/components/admin/ProductCard';
 import { useRouter } from 'next/navigation';
+import CategoryFilter from '@/app/components/admin/CategoryFilter';
+import Button from '@/app/components/common/Button';
 
 const AdminProductspage = () => {
   const [currentpage, setCurrentPage] = useState(1);
@@ -131,6 +133,21 @@ const AdminProductspage = () => {
     router.push('/admin/product/' + id);
   };
 
+  const fetchProducts = async filters => {
+    try {
+      const query = filters.map(cat => `category=${cat}`).join('&');
+      // const res = await axios.get(`/api/products?${query}`);
+
+      console.log(`/api/products?${query}`);
+
+      // setProducts(res.data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleAddProduct = () => {};
+
   return (
     <main className="w-full min-h-50 py-3 pb-8 px-2 flex flex-col gap-5">
       <h1 className="text-[20px] lg:text-[30px] font-bold">
@@ -139,10 +156,25 @@ const AdminProductspage = () => {
 
       {/* search bar */}
       <div className="flex h-10 items-center gap-3">
-        <SearchBar className="w-60  h-full flex items-center gap-3 border border-gray-400 rounded-[5px] px-4 lg:w-75" />
-        <i className="material-icons size-8 bg-blue-700 text-white p-[4px] rounded-[5px]">
-          arrow_downward
-        </i>
+        <SearchBar
+          className="w-80  h-full flex items-center gap-3 bg-[#fff0bd] rounded-[5px] px-4 lg:w-75"
+          placeholder="Search Product Name"
+        />
+
+        <CategoryFilter
+          categories={[
+            'Phones',
+            'Laptops',
+            'Cameras',
+            'Accessories',
+            'Car',
+            'Accessories',
+            'Accessories',
+          ]}
+          onApply={fetchProducts}
+        />
+
+        <Button text="Add Product" onClick={handleAddProduct} />
       </div>
 
       <div className="flex flex-col lg:flex-row w-full min-h-[80%] gap-5 relative">
