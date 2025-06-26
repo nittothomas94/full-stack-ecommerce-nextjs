@@ -2,7 +2,7 @@
 export default function AdminOrderPage() {
   return (
     <main>
-      <h2>Manage Orders</h2>
+      <h2>Manage Ordders</h2>
     </main>
   );
 }
